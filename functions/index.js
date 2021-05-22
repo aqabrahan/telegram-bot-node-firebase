@@ -1,10 +1,9 @@
 const functions = require('firebase-functions');
+const {Telegraf} = require('telegraf');
 const restClient = require('axios').create({
   baseURL: 'http://api.openweathermap.org/data/2.5',
 });
-let config = require('../env.json');
-
-const {Telegraf} = require('telegraf');
+let config = require('./env.json');
 
 if (Object.keys(functions.config()).length) {
   config = functions.config();
